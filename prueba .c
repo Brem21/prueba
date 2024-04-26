@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <math.h>
 
+#define PI 3.14159265358979323846
+
 float calcularDistancia(float x1, float y1, float x2, float y2) {
     return sqrt(pow((x2 - x1), 2) + pow((y2 - y1), 2));
 }
 
 float calcularAreaCirculo(float radio) {
-    return M_PI * pow(radio, 2);
+    return PI * pow(radio, 2);
 }
 
 float calcularPerimetroRectangulo(float base, float altura) {
@@ -22,9 +24,9 @@ int main() {
     scanf("%f %f", &x1, &y1);
     printf("Ingrese las coordenadas de un punto en el borde del círculo (x, y): ");
     scanf("%f %f", &x2, &y2);
-
     distancia = calcularDistancia(x1, y1, x2, y2);
-    areaCirculo = calcularAreaCirculo(distancia);
+    radio = distancia; // Asigna la distancia calculada como el radio del círculo
+    areaCirculo = calcularAreaCirculo(radio);
 
     printf("Ingrese la base del rectángulo: ");
     scanf("%f", &base);
